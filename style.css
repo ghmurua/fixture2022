@@ -1,47 +1,79 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-    /* font-weight: bold; */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 body {
-    background-color: beige;
+  background-color: beige;
 }
 
 .divGroups {
-    display: flex;
-    flex-wrap: wrap;
-    gap:1em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
 }
 
-.divGroups header {
-    text-transform: uppercase;
-    font-size: 70px;
-}
+    .divGroups header {
+      text-transform: uppercase;
+      font-size: 70px;
+    }
 
-.divGroups > div {
-    width: 9em;
-    padding: 0.5em;
-    background-color: white;
-    color: black;
-}
+    .divGroups > div {
+      width: 9em;
+      padding: 0.5em;
+      background-color: white;
+      color: black;
+    }
 
 .divMatches {
-    margin: 10rem 0 0;
+  margin: 10rem 0 0;
 }
 
     .divMatches > div {
-        margin-top: 3rem;
-        width: 22em
+      margin-top: 3rem;
+      width: 22em;
     }
 
     .divMatches > div > h2 {
-        padding-left: .5rem;
+      padding-left: 0.5rem;
     }
 
     .divMatches > div > p {
-        padding-left: 2.5rem;
-        /* padding: 15px; */
+      padding-left: 2.5rem;
+    }
+
+    .divMatches > div > p > b {
+        background-color: white;
+        padding: 0 5px;
+    }
+
+    .divMatches > div > p > i {
+        color: gray;
+    }
+
+.divPoints {
+  margin: 10rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+    .divPoints > div {
+        background-color: white;
+        width: 22em;
+        padding: 0.5em;
+    }
+
+    .right { float: right; }
+
+    .pointsTable {
+        display: grid;
+        grid-template-columns: repeat(6, 29px);
+        width: 12em;
+    }
+
+    .pointsTable > b {
+        text-align: center;
     }

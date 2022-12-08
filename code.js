@@ -29,8 +29,12 @@ for (let i = 0; i < matchDates.length; i++) {
   for (let j = 0; j < dataGroupMatches[matchDates[i]].length; j++) {
     let info = dataGroupMatches[matchDates[i]][j];
     let p = document.createElement("p");
-    p.innerText = `${info[0]}: ${info[1]} vs ${info[2]}`;
-    div.appendChild(p);
+    if ( info[4] != undefined ) { // si hay resultado
+      p.innerHTML = `<i>${info[0]}:</i> ${info[1]} <b>${info[4]}</b> ${info[2]}`
+  } else {
+      p.innerText = `${info[0]}: ${info[1]} vs ${info[2]}`
+  }
+div.appendChild(p);
   }
 
   divMatches.appendChild(div);
@@ -83,3 +87,95 @@ matchDates.map((match) => {
     }
   }
 });
+
+// ordenando posiciones segun puntos y goles
+const nameGroups = Object.keys(dataGroupPoints); // ['A','B'...]
+const posiciones = [];
+
+for (let i = 0; i < 8; i++) {
+  let grupoDesordenado = dataGroupPoints[nameGroups[i]];
+  const teams = Object.keys(dataGroupPoints[nameGroups[i]]); // ['Qatar','Ecuador'...]
+
+  // creo un arr con [puntos+difGol+golesFavor, nombre de equipo]
+  let arrGrupo = [];
+  for (let j = 0; j < 4; j++) {
+    let arrEquipo = [];
+    let theNumber = 50;
+    // 300    = 3 puntos
+    //  48    = dif-2
+    //    .12 = goles a favor
+    // 348.12
+    theNumber +=
+      grupoDesordenado[teams[j]].Pts * 100 +
+      grupoDesordenado[teams[j]].DG +
+      grupoDesordenado[teams[j]].GF / 100;
+
+    arrEquipo.push(theNumber);
+    arrEquipo.push(teams[j]);
+    arrGrupo.push(arrEquipo);
+  }
+  // ordeno los equipos por theNumber
+  let grupoOrdenado = [];
+  for (k = 0; k < 4; k++) {
+    let index = 0;
+    let max = 0;
+    for (m = 0; m < 4; m++) {
+      // encuentro el mayor,
+      if (arrGrupo[m][0] > max) {
+        max = arrGrupo[m][0];
+        index = m;
+      }
+    }
+    grupoOrdenado.push(arrGrupo[index][1]); // guardo el nombre del equipo,
+    arrGrupo[index][0] = -1; // y no vuelve a ser el mayor
+  }
+  posiciones.push(grupoOrdenado);
+}
+
+// graficando posiciones en los grupos
+const divPoints = document.querySelector(".divPoints");
+
+for (let i = 0; i < 8; i++) {
+  let div = document.createElement("DIV");
+  div.setAttribute("class", `table bg${nameGroups[i]}`);
+  let h4 = document.createElement("h1");
+  h4.innerText = `GRUPO ${nameGroups[i]}`;
+  div.appendChild(h4);
+
+  let informacionTabla = ["P", "W", "D", "L", "DG", "Pts"];
+  let p = document.createElement("p");
+  p.innerHTML = "&nbsp;";
+  let span = document.createElement("SPAN");
+
+  for (let i = 0; i < informacionTabla.length; i++) {
+    let b = document.createElement("b");
+    b.innerText = `${informacionTabla[i]}`;
+    span.appendChild(b);
+  }
+  span.setAttribute("class", "right pointsTable");
+  p.appendChild(span);
+  div.appendChild(p);
+
+  for (let k = 0; k < 4; k++) {
+    let infoTeam = dataGroupPoints[nameGroups[i]][posiciones[i][k]];
+    let p = document.createElement("p");
+    // p.setAttribute('class',`team b${infoTeam[3]}`) // grupo
+
+    span = document.createElement("SPAN");
+    span.innerText = `${posiciones[i][k]}`;
+    div.appendChild(span);
+
+    span = document.createElement("SPAN");
+    span.setAttribute("class", "right pointsTable");
+    for (let i = 0; i < informacionTabla.length; i++) {
+      let b = document.createElement("b");
+      b.innerText = `${infoTeam[informacionTabla[i]]}`;
+      span.appendChild(b);
+    }
+
+    div.appendChild(span);
+    div.appendChild(p);
+  }
+
+  divPoints.appendChild(div);
+}
