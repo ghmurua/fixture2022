@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    /* font-weight: bold; */
+}
+
+body {
+    background-color: beige;
+}
+
+.divGroups {
+    display: flex;
+    flex-wrap: wrap;
+    gap:1em;
+}
+
+.divGroups header {
+    text-transform: uppercase;
+    font-size: 70px;
+}
+
+.divGroups > div {
+    width: 9em;
+    padding: 0.5em;
+    background-color: white;
+    color: black;
+}
+
