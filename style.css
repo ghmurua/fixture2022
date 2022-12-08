@@ -28,3 +28,20 @@ body {
     color: black;
 }
 
+.divMatches {
+    margin: 10rem 0 0;
+}
+
+    .divMatches > div {
+        margin-top: 3rem;
+        width: 22em
+    }
+
+    .divMatches > div > h2 {
+        padding-left: .5rem;
+    }
+
+    .divMatches > div > p {
+        padding-left: 2.5rem;
+        /* padding: 15px; */
+    }
