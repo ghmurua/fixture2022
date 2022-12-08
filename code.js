@@ -35,3 +35,51 @@ for (let i = 0; i < matchDates.length; i++) {
 
   divMatches.appendChild(div);
 }
+
+// calculando informacion de cada equipo: partidos, goles y puntos según resultados
+matchDates.map((match) => {
+  let partidosEnElDia = dataGroupMatches[match].length;
+  for (let i = 0; i < partidosEnElDia; i++) {
+    let grupo = dataGroupMatches[match][i][3]; // "A"
+
+    let partido = dataGroupMatches[match][i]; // ["19:00", "Qatar", "Ecuador", "A", "0-2"]
+    if (partido[4] != undefined) {
+      // si hay resultado
+      let resultado = partido[4].split("-");
+
+      let equipo1 = dataGroupPoints[grupo][partido[1]];
+      let equipo2 = dataGroupPoints[grupo][partido[2]];
+
+      // se suman partido jugado y goles a favor
+      equipo1.P++;
+      equipo1.GF += parseInt(resultado[0]);
+      equipo2.P++;
+      equipo2.GF += parseInt(resultado[1]);
+
+      // calcular diferencia de gol
+      let dif = resultado[0] - resultado[1];
+
+      if (dif > 0) {
+        // gana el local: suman W, L, Pts, DG
+        equipo1.W++;
+        equipo1.Pts += 3;
+        equipo1.DG += dif;
+        equipo2.L++;
+        equipo2.DG -= dif;
+      } else if (dif < 0) {
+        equipo2.W++;
+        equipo2.Pts += 3;
+        equipo2.DG -= dif;
+        equipo1.L++;
+        equipo1.DG += dif;
+      }
+      // empate: suman D y Pts
+      else {
+        equipo1.D++;
+        equipo1.Pts += 1;
+        equipo2.D++;
+        equipo2.Pts += 1;
+      }
+    }
+  }
+});

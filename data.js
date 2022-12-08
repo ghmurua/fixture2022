@@ -85,3 +85,54 @@ const dataGroupMatches = {
     ["22:00", "Serbia", "Suiza", "G", "2-3"]
   ],
 };
+
+const dataGroupPoints = {
+  A : {
+    Qatar: { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+    Ecuador: { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+    Senegal: { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+    "Paises Bajos": { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+  },
+  B : {
+    Inglaterra: { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+    Irán: { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+    "Estados Unidos": { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+    Gales: { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+  },
+  C : {
+    Argentina: { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+    "Arabia Saudita": { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+    México: { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+    Polonia: { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+  },
+  D : {
+    Francia: { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+    Australia: { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+    Dinamarca: { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+    Túnez: { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+  },
+  E : {
+    España: { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+    "Costa Rica": { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+    Alemania: { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+    Japón: { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+  },
+  F : {
+    Bélgica: { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+    Canadá: { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+    Marruecos: { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+    Croacia: { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+  },
+  G : {
+    Brasil: { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+    Serbia: { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+    Suiza: { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+    Camerún: { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+  },
+  H : {
+    Portugal: { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+    Ghana: { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+    Uruguay: { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+    "Corea del Sur": { P: 0, W: 0, D: 0, L: 0, GF: 0, DG: 0, Pts: 0 },
+  }
+}
