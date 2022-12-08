@@ -10,76 +10,78 @@ const dataGroups = [
 ];
 
 const dataGroupMatches = {
-  "Nov 20": [["19:00", "Qatar", "Ecuador", "A"]],
+  "Nov 20": [
+    ["19:00", "Qatar", "Ecuador", "A", "0-2"]
+  ],
   "Nov 21": [
-    ["16:00", "Senegal", "Paises Bajos", "A"],
-    ["19:00", "Inglaterra", "Irán", "B"],
-    ["22:00", "Estados Unidos", "Gales", "B"],
+    ["16:00", "Senegal", "Paises Bajos", "A", "0-2"],
+    ["19:00", "Inglaterra", "Irán", "B", "6-2"],
+    ["22:00", "Estados Unidos", "Gales", "B", "1-1"]
   ],
   "Nov 22": [
-    ["13:00", "Argentina", "Arabia Saudita", "C"],
-    ["16:00", "Dinamarca", "Túnez", "D"],
-    ["19:00", "México", "Polonia", "C"],
-    ["22:00", "Francia", "Australia", "D"],
+    ["13:00", "Argentina", "Arabia Saudita", "C", "1-2"],
+    ["16:00", "Dinamarca", "Túnez", "D", "0-0"],
+    ["19:00", "México", "Polonia", "C", "0-0"],
+    ["22:00", "Francia", "Australia", "D", "4-1"]
   ],
   "Nov 23": [
-    ["13:00", "Marruecos", "Croacia", "F"],
-    ["16:00", "Alemania", "Japón", "E"],
-    ["19:00", "España", "Costa Rica", "E"],
-    ["22:00", "Bélgica", "Canadá", "F"],
+    ["13:00", "Marruecos", "Croacia", "F", "0-0"],
+    ["16:00", "Alemania", "Japón", "E", "1-2"],
+    ["19:00", "España", "Costa Rica", "E", "7-0"],
+    ["22:00", "Bélgica", "Canadá", "F", "1-0"]
   ],
   "Nov 24": [
-    ["13:00", "Suiza", "Camerún", "G"],
-    ["16:00", "Uruguay", "Corea del Sur", "H"],
-    ["19:00", "Portugal", "Ghana", "H"],
-    ["22:00", "Brasil", "Serbia", "G"],
+    ["13:00", "Suiza", "Camerún", "G", "1-0"],
+    ["16:00", "Uruguay", "Corea del Sur", "H", "0-0"],
+    ["19:00", "Portugal", "Ghana", "H", "3-2"],
+    ["22:00", "Brasil", "Serbia", "G", "2-0"]
   ],
   "Nov 25": [
-    ["13:00", "Gales", "Irán", "B"],
-    ["16:00", "Qatar", "Senegal", "A"],
-    ["19:00", "Paises Bajos", "Ecuador", "A"],
-    ["22:00", "Inglaterra", "Estados Unidos", "B"],
+    ["13:00", "Gales", "Irán", "B", "0-2"],
+    ["16:00", "Qatar", "Senegal", "A", "1-3"],
+    ["19:00", "Paises Bajos", "Ecuador", "A", "1-1"],
+    ["22:00", "Inglaterra", "Estados Unidos", "B", "0-0"]
   ],
   "Nov 26": [
-    ["13:00", "Túnez", "Australia", "D"],
-    ["16:00", "Polonia", "Arabia Saudita", "C"],
-    ["19:00", "Francia", "Dinamarca", "D"],
-    ["22:00", "Argentina", "México", "C"],
+    ["13:00", "Túnez", "Australia", "D", "0-1"],
+    ["16:00", "Polonia", "Arabia Saudita", "C", "2-0"],
+    ["19:00", "Francia", "Dinamarca", "D", "2-1"],
+    ["22:00", "Argentina", "México", "C", "2-0"]
   ],
   "Nov 27": [
-    ["13:00", "Japón", "Costa Rica", "E"],
-    ["16:00", "Bélgica", "Marruecos", "F"],
-    ["19:00", "Croacia", "Canadá", "F"],
-    ["22:00", "España", "Alemania", "E"],
+    ["13:00", "Japón", "Costa Rica", "E", "0-1"],
+    ["16:00", "Bélgica", "Marruecos", "F", "0-2"],
+    ["19:00", "Croacia", "Canadá", "F", "4-1"],
+    ["22:00", "España", "Alemania", "E", "1-1"]
   ],
   "Nov 28": [
-    ["13:00", "Camerún", "Serbia", "G"],
-    ["16:00", "Corea del Sur", "Ghana", "H"],
-    ["19:00", "Brasil", "Suiza", "G"],
-    ["22:00", "Portugal", "Uruguay", "H"],
+    ["13:00", "Camerún", "Serbia", "G", "3-3"],
+    ["16:00", "Corea del Sur", "Ghana", "H", "2-3"],
+    ["19:00", "Brasil", "Suiza", "G", "1-0"],
+    ["22:00", "Portugal", "Uruguay", "H", "2-0"]
   ],
   "Nov 29": [
-    ["18:00", "Paises Bajos", "Qatar", "A"],
-    ["18:00", "Ecuador", "Senegal", "A"],
-    ["22:00", "Irán", "Estados Unidos", "B"],
-    ["22:00", "Gales", "Inglaterra", "B"],
+    ["18:00", "Paises Bajos", "Qatar", "A", "2-0"],
+    ["18:00", "Ecuador", "Senegal", "A", "1-2"],
+    ["22:00", "Irán", "Estados Unidos", "B", "0-1"],
+    ["22:00", "Gales", "Inglaterra", "B", "0-3"]
   ],
   "Nov 30": [
-    ["18:00", "Túnez", "Francia", "D"],
-    ["18:00", "Australia", "Dinamarca", "D"],
-    ["22:00", "Arabia Saudita", "México", "C"],
-    ["22:00", "Polonia", "Argentina", "C"],
+    ["18:00", "Túnez", "Francia", "D", "1-0"],
+    ["18:00", "Australia", "Dinamarca", "D", "1-0"],
+    ["22:00", "Arabia Saudita", "México", "C", "1-2"],
+    ["22:00", "Polonia", "Argentina", "C", "0-2"]
   ],
   "Dec 1": [
-    ["18:00", "Canadá", "Marruecos", "F"],
-    ["18:00", "Croacia", "Bélgica", "F"],
-    ["22:00", "Costa Rica", "Alemania", "E"],
-    ["22:00", "Japón", "España", "E"],
+    ["18:00", "Canadá", "Marruecos", "F", "1-2"],
+    ["18:00", "Croacia", "Bélgica", "F", "0-0"],
+    ["22:00", "Costa Rica", "Alemania", "E", "2-4"],
+    ["22:00", "Japón", "España", "E", "2-1"]
   ],
   "Dec 2": [
-    ["18:00", "Corea del Sur", "Portugal", "H"],
-    ["18:00", "Ghana", "Uruguay", "H"],
-    ["22:00", "Camerún", "Brasil", "G"],
-    ["22:00", "Serbia", "Suiza", "G"],
+    ["18:00", "Corea del Sur", "Portugal", "H", "2-1"],
+    ["18:00", "Ghana", "Uruguay", "H", "0-2"],
+    ["22:00", "Camerún", "Brasil", "G", "1-0"],
+    ["22:00", "Serbia", "Suiza", "G", "2-3"]
   ],
 };
