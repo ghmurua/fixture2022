@@ -179,3 +179,23 @@ for (let i = 0; i < 8; i++) {
 
   divPoints.appendChild(div);
 }
+
+// detectando final de fase de grupos, grupo G es el ultimo en jugar
+let lastGroup = Object.keys(dataGroupPoints.G)
+groupPhaseEnd = true
+for ( let i=0; i<4; i++ ) {
+    // si algún equipo no terminó sus 3 partidos da false
+    if ( dataGroupPoints.G[lastGroup[i]].P < 3) groupPhaseEnd = false
+}
+
+// armando fase final
+if ( groupPhaseEnd === true) {
+    dataKnockout8["Dec 3"][0].splice(1,2,posiciones[0][0],posiciones[1][1])
+    dataKnockout8["Dec 3"][1].splice(1,2,posiciones[2][0],posiciones[3][1])
+    dataKnockout8["Dec 4"][0].splice(1,2,posiciones[3][0],posiciones[2][1])
+    dataKnockout8["Dec 4"][1].splice(1,2,posiciones[1][0],posiciones[0][1])
+    dataKnockout8["Dec 5"][0].splice(1,2,posiciones[4][0],posiciones[5][1])
+    dataKnockout8["Dec 5"][1].splice(1,2,posiciones[6][0],posiciones[7][1])
+    dataKnockout8["Dec 6"][0].splice(1,2,posiciones[5][0],posiciones[4][1])
+    dataKnockout8["Dec 6"][1].splice(1,2,posiciones[7][0],posiciones[6][1])
+}
