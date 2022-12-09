@@ -27,29 +27,29 @@ body {
       color: black;
     }
 
-.divMatches {
+.match {
   margin: 10rem 0 0;
 }
 
-    .divMatches > div {
+    .match > div {
       margin-top: 3rem;
-      width: 22em;
+      /* width: 22em; */
     }
 
-    .divMatches > div > h2 {
+    .match > div > h2 {
       padding-left: 0.5rem;
     }
 
-    .divMatches > div > p {
+    .match > div > p {
       padding-left: 2.5rem;
     }
 
-    .divMatches > div > p > b {
+    .match > div > p > b {
         background-color: white;
         padding: 0 5px;
     }
 
-    .divMatches > div > p > i {
+    .match > div > p > i {
         color: gray;
     }
 

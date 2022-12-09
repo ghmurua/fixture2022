@@ -31,10 +31,10 @@ for (let i = 0; i < matchDates.length; i++) {
     let p = document.createElement("p");
     if ( info[4] != undefined ) { // si hay resultado
       p.innerHTML = `<i>${info[0]}:</i> ${info[1]} <b>${info[4]}</b> ${info[2]}`
-  } else {
+    } else {
       p.innerText = `${info[0]}: ${info[1]} vs ${info[2]}`
-  }
-div.appendChild(p);
+    }
+  div.appendChild(p);
   }
 
   divMatches.appendChild(div);
@@ -199,3 +199,31 @@ if ( groupPhaseEnd === true) {
     dataKnockout8["Dec 6"][0].splice(1,2,posiciones[5][0],posiciones[4][1])
     dataKnockout8["Dec 6"][1].splice(1,2,posiciones[7][0],posiciones[6][1])
 }
+
+// mostrando los partidos de octavos
+const divKnockOutMatches = document.querySelector(".divKnockOutMatches");
+const koMatchDates = Object.keys(dataKnockout8);
+divKnockOutMatches.innerHTML += '<h2>Octavos de Final</h2>'
+count = 0
+
+for (let i = 0; i < koMatchDates.length; i++) {
+  let div = document.createElement("DIV");
+  let h2 = document.createElement("H2");
+  h2.innerText = `${koMatchDates[i]}`;
+  div.appendChild(h2);
+
+  for (let j = 0; j < dataKnockout8[koMatchDates[i]].length; j++) {
+    count++
+    let info = dataKnockout8[koMatchDates[i]][j];
+    let p = document.createElement("p");
+    if ( info[4] != undefined ) { // si hay resultado
+      p.innerHTML = `O${count} - <i>${info[0]}:</i> ${info[1]} <b>${info[4]}</b> ${info[2]}`
+    } else {
+      p.innerText = `O${count} - ${info[0]}: ${info[1]} vs ${info[2]}`
+    }
+  div.appendChild(p);
+  }
+
+  divKnockOutMatches.appendChild(div);
+}
+
