@@ -168,8 +168,8 @@ let dataKnockout4 = {
 }
 
 let dataKnockout2 = {
-  "Dec 13": ["22:00", "C1", "C3"],
-  "Dec 14": ["22:00", "C2", "C4"]
+  "Dec 13": ["22:00", "C1", "C2"],
+  "Dec 14": ["22:00", "C3", "C4"]
 }
 
 let dataKnockoutF = {

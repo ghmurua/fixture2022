@@ -27,30 +27,30 @@ body {
       color: black;
     }
 
-.match {
+.divKnockOutMatches > h2 {
   margin: 10rem 0 0;
 }
 
     .match > div {
       margin-top: 3rem;
-      /* width: 22em; */
     }
 
     .match > div > h2 {
-      padding-left: 0.5rem;
+      padding-left: 1.25rem;
     }
 
     .match > div > p {
-      padding-left: 2.5rem;
+      padding: 1.5rem 0 0 2.5rem;
+      height: 3rem;
     }
 
     .match > div > p > b {
         background-color: white;
-        padding: 0 5px;
-    }
+        /* padding: 0 5px; */
+      }
 
     .match > div > p > i {
-        color: gray;
+      color: gray;
     }
 
 .divPoints {

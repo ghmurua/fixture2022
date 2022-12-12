@@ -202,22 +202,25 @@ if ( groupPhaseEnd === true) {
 
 // mostrando los partidos de octavos
 const divKnockOutMatches = document.querySelector(".divKnockOutMatches");
-const koMatchDates = Object.keys(dataKnockout8);
+const date8 = Object.keys(dataKnockout8);
 divKnockOutMatches.innerHTML += '<h2>Octavos de Final</h2>'
 count = 0
 
-for (let i = 0; i < koMatchDates.length; i++) {
+for (let i = 0; i < 4; i++) {
+  let match8 = dataKnockout8[date8[i]]
   let div = document.createElement("DIV");
   let h2 = document.createElement("H2");
-  h2.innerText = `${koMatchDates[i]}`;
+  h2.innerText = `${date8[i]}`;
   div.appendChild(h2);
 
-  for (let j = 0; j < dataKnockout8[koMatchDates[i]].length; j++) {
+  for (let j = 0; j < dataKnockout8[date8[i]].length; j++) {
     count++
-    let info = dataKnockout8[koMatchDates[i]][j];
+    let info = dataKnockout8[date8[i]][j];
     let p = document.createElement("p");
-    if ( info[4] != undefined ) { // si hay resultado
-      p.innerHTML = `O${count} - <i>${info[0]}:</i> ${info[1]} <b>${info[4]}</b> ${info[2]}`
+    if ( info[3] != undefined ) {
+      let resuYGanador = resultado(match8[j])
+      p.innerHTML = `O${count} - <i>${info[0]}:</i> ${info[1]} <b>${resuYGanador[0]}</b> ${info[2]}`
+      guardarGanadores8(i,j,resuYGanador[1])
     } else {
       p.innerText = `O${count} - ${info[0]}: ${info[1]} vs ${info[2]}`
     }
@@ -227,3 +230,83 @@ for (let i = 0; i < koMatchDates.length; i++) {
   divKnockOutMatches.appendChild(div);
 }
 
+// mostrando los partidos de cuartos
+const date4 = Object.keys(dataKnockout4);
+divKnockOutMatches.innerHTML += '<h2>Cuartos de Final</h2>'
+count = 0
+
+for (let i = 0; i < 2; i++) {
+  let match4 = dataKnockout4[date4[i]]
+  let div = document.createElement("DIV");
+  let h2 = document.createElement("H2");
+  h2.innerText = `${date4[i]}`;
+  div.appendChild(h2);
+
+  for (let j = 0; j < dataKnockout4[date4[i]].length; j++) {
+    count++
+    let info = dataKnockout4[date4[i]][j];
+    let p = document.createElement("P");
+    if ( info[3] != undefined ) {
+      let resuYGanador = resultado(match4[j])
+      p.innerHTML = `C${count} - <i>${info[0]}:</i> ${info[1]} <b>${resuYGanador[0]}</b> ${info[2]}`
+      guardarGanadores4(i,j,resuYGanador[1])
+    } else {
+      p.innerText = `C${count} - ${info[0]}: ${info[1]} vs ${info[2]}`
+    }
+  div.appendChild(p);
+  }
+
+  divKnockOutMatches.appendChild(div);
+}
+
+// partidos de semifinal
+let date2 = Object.keys(dataKnockout2)
+divKnockOutMatches.innerHTML += '<h2>Semifinales</h2>'
+count = 0
+
+for ( let i=0; i<2; i++) {
+  count++
+  let match2 = dataKnockout2[date2[i]]
+  let div = document.createElement("DIV");
+  let h2 = document.createElement("H2");
+  h2.innerText = date2[i]
+  div.appendChild(h2)
+
+  let p = document.createElement("P");
+  if ( dataKnockout2[date2[i]][3] != undefined ) {
+    let resuYGanador = resultadoSemis(match2)
+    p.innerHTML = `S${count} - <i>${match2[0]}</i> ${match2[1]} ${resuYGanador[0]} ${match2[2]}`
+    
+    dataKnockoutF["Dec 18"].splice(i+1,1,resuYGanador[1])
+    dataKnockoutF["Dec 17"].splice(i+1,1,resuYGanador[2])
+  }
+  else {
+    p.innerHTML = `S${count} - ${match2[0]} ${match2[1]} vs ${match2[2]}`
+  }
+  div.appendChild(p);
+  divKnockOutMatches.appendChild(div)
+}
+
+// Final y 3°
+let dateF = Object.keys(dataKnockoutF)
+
+for ( let i=0; i<2; i++) {
+  if ( i === 0 ) divKnockOutMatches.innerHTML += '<h2>Tercer Lugar</h2>'
+  else divKnockOutMatches.innerHTML += '<h2>Final</h2>'
+
+  let matchF = dataKnockoutF[dateF[i]]
+  let div = document.createElement("DIV");
+  let h2 = document.createElement("H2");
+  h2.innerText = date2[i]
+  div.appendChild(h2)
+  
+  let p = document.createElement("P");
+    if ( dataKnockoutF[dateF[i]][3] != undefined ) {
+      let resuYGanador = resultado(matchF)
+      p.innerHTML = `${matchF[0]} ${matchF[1]} ${resuYGanador[0]} ${matchF[2]}`
+    } else {
+      p.innerHTML = `${matchF[0]} ${matchF[1]} vs ${matchF[2]}`
+    }
+  div.appendChild(p)
+  divKnockOutMatches.appendChild(div)
+}
